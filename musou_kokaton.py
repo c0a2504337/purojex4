@@ -224,8 +224,8 @@ class Shield(pg.sprite.Sprite):
 
         self.rect = self.image.get_rect()
 
-        self.rect.centerx = bird.rect.centerx + bird.rect.width * 1.5 * vx
-        self.rect.centery = bird.rect.centery + bird.rect.height * 1.5 * vy
+        self.rect.centerx = bird.rect.centerx + bird.rect.width * vx
+        self.rect.centery = bird.rect.centery + bird.rect.height * vy
 
         self.life = life
 
