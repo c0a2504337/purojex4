@@ -229,14 +229,14 @@ class Explosion(pg.sprite.Sprite):
         self.imgs = [img, pg.transform.flip(img, 1, 1)]
         self.image = self.imgs[0]
         self.rect = self.image.get_rect(center=obj.rect.center)
-        self.life = life
+        self.life = 50
 
     def update(self):
         """
         爆発時間を1減算した爆発経過時間_lifeに応じて爆発画像を切り替えることで
         爆発エフェクトを表現する
         """
-        #self.life -= 1
+        self.life -= 1
         self.image = self.imgs[self.life//10%2]
         if self.life < 0:
             self.kill()
