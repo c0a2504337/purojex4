@@ -236,7 +236,7 @@ class Explosion(pg.sprite.Sprite):
         爆発時間を1減算した爆発経過時間_lifeに応じて爆発画像を切り替えることで
         爆発エフェクトを表現する
         """
-        self.life -= 1
+        #self.life -= 1
         self.image = self.imgs[self.life//10%2]
         if self.life < 0:
             self.kill()
@@ -454,9 +454,9 @@ def main():
             else:
                 bird.change_img(8, screen)  # こうかとん悲しみエフェクト
                 score.update(screen)
-            exps.add(Explosion(bomb, 50))
-            bird.change_img(8, screen)  # こうかとん悲しみエフェクト
-            life.life_num -= 1
+                exps.add(Explosion(bomb, 50))
+                bird.change_img(8, screen)  # こうかとん悲しみエフェクト
+                life.life_num -= 1
             if life.life_num <= 0:
                 score.update(screen)
                 life.update(screen)
